@@ -5,7 +5,7 @@ Quick test of LRG HOD Pipeline
 
 import numpy as np
 import matplotlib.pyplot as plt
-from lrg_hod_pipeline import LRGHODPipeline
+from .lrg_hod_pipeline import LRGHODPipeline
 
 def main():
     """Quick test run"""
@@ -13,7 +13,7 @@ def main():
 
     # Initialize pipeline
     sim_path = "/home/jovyan/AbacusSummit"
-    pipeline = LRGHODPipeline(sim_path)
+    pipeline = LRGHODPipeline(sim_path, output_dir="../output")
 
     # Load lightcone data
     halo_data = pipeline.load_lightcone_data("z0.500")
@@ -70,12 +70,12 @@ def main():
     axes[1].legend()
 
     plt.tight_layout()
-    plt.savefig('output/test_lrg_results.png', dpi=150, bbox_inches='tight')
+    plt.savefig('../output/test_lrg_results.png', dpi=150, bbox_inches='tight')
     plt.show()
 
     print(f"\nTest completed successfully!")
     print(f"Catalog saved to: {output_file}")
-    print(f"Plot saved to: output/test_lrg_results.png")
+    print(f"Plot saved to: ../output/test_lrg_results.png")
 
 if __name__ == "__main__":
     main()

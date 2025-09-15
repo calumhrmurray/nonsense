@@ -124,7 +124,7 @@ def test_tidal_shear():
     """Test the efficient tidal shear calculation with LRG catalog"""
 
     # Load the LRG catalog
-    catalog_file = "output/test_lrg_catalog.h5"
+    catalog_file = "../output/test_lrg_catalog.h5"
 
     with h5py.File(catalog_file, 'r') as f:
         galaxy_pos = f['pos'][:]
@@ -191,11 +191,11 @@ def test_tidal_shear():
     ax.axvline(0, color='k', linestyle='--', alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('output/tidal_shear_analysis.png', dpi=150, bbox_inches='tight')
+    plt.savefig('../output/tidal_shear_analysis.png', dpi=150, bbox_inches='tight')
     plt.show()
 
     # Save tidal shear data
-    output_file = "output/lrg_catalog_with_tidal_shear.h5"
+    output_file = "../output/lrg_catalog_with_tidal_shear.h5"
 
     # Load existing catalog and add tidal shear
     with h5py.File(catalog_file, 'r') as f_in:
@@ -219,7 +219,7 @@ def test_tidal_shear():
 
     print(f"\nTidal shear analysis complete!")
     print(f"Enhanced catalog saved to: {output_file}")
-    print(f"Plots saved to: output/tidal_shear_analysis.png")
+    print(f"Plots saved to: ../output/tidal_shear_analysis.png")
 
     return tidal_data
 

@@ -11,7 +11,7 @@ from scipy.stats import binned_statistic
 import time
 
 
-def load_catalog(filename="output/lrg_catalog_with_tidal_shear.h5"):
+def load_catalog(filename="../output/lrg_catalog_with_tidal_shear.h5"):
     """Load LRG catalog with all data"""
     print(f"Loading LRG catalog from {filename}")
 
@@ -328,13 +328,13 @@ def main():
     plt.suptitle('LRG HOD Catalog Validation', fontsize=16, y=0.98)
 
     # Save plots
-    plt.savefig('output/lrg_validation_report.png', dpi=150, bbox_inches='tight')
+    plt.savefig('../output/lrg_validation_report.png', dpi=150, bbox_inches='tight')
     plt.show()
 
     print("\n" + "="*60)
     print("VALIDATION COMPLETE")
     print("="*60)
-    print(f"Validation plots saved to: output/lrg_validation_report.png")
+    print(f"Validation plots saved to: ../output/lrg_validation_report.png")
     print(f"Catalog contains {len(data['pos']):,} LRG galaxies with:")
     print(f"  ✓ Positions (real and redshift-space)")
     print(f"  ✓ Halo masses and HOD implementation")
